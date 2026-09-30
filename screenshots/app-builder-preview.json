@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Taza",
+      "hasCanvas": false,
+      "bodyTextLen": 1806,
+      "bodyTextHash": "4a68ca4b494627a12b37b5fe0d6780fce96b88cb7b7b55cf8323d173e71ce466",
+      "bodyTextPrefix": "Taza তাজা · Organic Bangladesh Home Products About Contact 100% ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Taza",
+      "hasCanvas": false,
+      "bodyTextLen": 1743,
+      "bodyTextHash": "547410bab1e5244d9ccf4eb48a330bed0e02ef392ae465f0a3c2b3ff81e3b247",
+      "bodyTextPrefix": "Taza 100% Organic · Bangladesh Fresh from the farm to your table",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

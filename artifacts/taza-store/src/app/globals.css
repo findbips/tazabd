@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #f4efe4;
+  color: #1c3324;
+  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+  font-family: Fraunces, ui-serif, Georgia, serif;
+}
+
+p { text-wrap: pretty; }
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
