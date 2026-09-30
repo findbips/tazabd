@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { cartTotals, useCart } from "@/lib/cart";
 import { formatPrice, FREE_DELIVERY_MIN } from "@/lib/products";
@@ -14,26 +12,6 @@ function CartPage() {
   const remove = useCart((s) => s.remove);
   const clear = useCart((s) => s.clear);
   const { count, subtotal, delivery, total } = cartTotals(items);
-  const [placed, setPlaced] = useState(false);
-
-  if (placed) {
-    return (
-      <div className="mx-auto max-w-lg px-4 py-20 text-center">
-        <div className="mx-auto mb-6 flex size-20 items-center justify-center rounded-full bg-surface text-primary shadow-card">
-          <ShoppingBag className="size-10" />
-        </div>
-        <h1 className="font-display text-3xl font-bold text-ink">
-          Order received
-        </h1>
-        <p className="mt-3 text-muted">
-          Thank you. A Taza rider will confirm by phone. Pay cash on delivery.
-        </p>
-        <Button asChild className="mt-8">
-          <Link to="/products">Continue shopping</Link>
-        </Button>
-      </div>
-    );
-  }
 
   if (items.length === 0) {
     return (
@@ -167,16 +145,11 @@ function CartPage() {
               delivery
             </p>
           )}
-          <Button
-            className="mt-6 w-full"
-            size="lg"
-            onClick={() => {
-              clear();
-              setPlaced(true);
-              toast.success("Order placed — cash on delivery");
-            }}
-          >
-            Place order (COD)
+          <Button asChild className="mt-6 w-full" size="lg">
+            <Link to="/checkout">
+              Proceed to checkout
+              <ArrowRight className="size-4" />
+            </Link>
           </Button>
           <p className="mt-3 text-center text-xs text-muted">
             Cash on delivery across Bangladesh

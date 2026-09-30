@@ -20,6 +20,15 @@ import { pendingMigrations } from "./migration-plan.mjs";
 
 const databaseUrl = process.env.DATABASE_URL;
 if (!databaseUrl) {
+  // On Vercel a missing database is a misconfiguration, not a local preview:
+  // the app would fall back to throwaway in-memory storage and lose orders.
+  if (process.env.VERCEL) {
+    console.error(
+      "[migrate] DATABASE_URL is not set for this Vercel build. Add a Postgres database " +
+        "(e.g. Neon via the Vercel Marketplace) and set DATABASE_URL, then redeploy.",
+    );
+    process.exit(1);
+  }
   console.log(
     "[migrate] DATABASE_URL not set — skipping (the PGLite fallback migrates itself).",
   );
